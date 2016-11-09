@@ -36,7 +36,7 @@
 <img class="arrow" src="./images/arrow.png" alt="">
 <div class="progress-bg">
  	<div id="progress"></div>
- </div> 
+ </div>
 <audio id="audio" controls autoplay>
 	<source id="source" src="./audio/金莎-星月神话.mp3">
 	对不起，您的浏览器版本过低，请使用谷歌浏览器
@@ -53,19 +53,20 @@
 	<script src="./js/swiper-3.3.1.min.js"></script>
 	<script src="./js/swiper.animate1.0.2.min.js"></script>
 	<script>
+	window.onload=function(){
 		var mySwiper = new Swiper ('.swiper-container', {
   	onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
-    swiperAnimateCache(swiper); //隐藏动画元素 
+    swiperAnimateCache(swiper); //隐藏动画元素
     swiperAnimate(swiper); //初始化完成开始动画
-  	}, 
-  	onSlideChangeEnd: function(swiper){ 
+  	},
+  	onSlideChangeEnd: function(swiper){
     swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
   	},
   	direction : 'vertical',
   	loop:true,
   	autoplay : 5000,
   	autoplayDisableOnInteraction : false
-  })  
+  })
 		var audio = document.getElementById('audio')
 		var source = document.getElementById('source')
 		var nowplayname = document.getElementById('nowplayname')
@@ -93,11 +94,11 @@
   	}
   	//点击播放
   	playBtn.onclick = function(){
-  		audio.play()  
+  		audio.play()
   	}
   	//点击暂停
   	pauseBtn.onclick = function(){
-  		audio.pause() 
+  		audio.pause()
   	}
   	//静音切换
   	mutedBtn.onclick = function(){
@@ -146,6 +147,8 @@
   	audio.onended = function(){
   		toggleMusic(1)
   	}
+	}
+
 	</script>
 </body>
 </html>
